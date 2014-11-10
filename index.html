@@ -18,9 +18,16 @@
 
     <!-- Custom CSS -->
     <style>
+    
+    h1, h2, h3, h4, h5, h6, p, div {
+      font-family: "atrament-web", sans-serif
+    }
+    
+    div.name {
+      font-size: 75px;
+    }
     body {
         padding-top: 70px;
-        /* Required padding for .navbar-fixed-top. Remove if using .navbar-static-top. Change if height of navigation changes. */
     }
     </style>
 
@@ -79,12 +86,19 @@
                 </h2>
                 <p class="lead">Generate a first name</p>
 
-               <button id="main_name">Make name</button>
-               <div id="first_name" class="name">hi</div>
+               <button id="main_name" class="btn btn-default">Make name</button>
+               <div id="first_name" class="name">Click here or on button to make name</div>
+               <!-- <p class="lead">Generate a last name</p> -->
                <script>
                  $( "button:first" ).click(function() {
                    newName( $( "div#first_name" ) );
                  });  
+                 $( "div#first_name" ).click(function() {
+                   newName( $( "div#first_name" ) );
+                 });
+                 // $( "div#last_name" ).click(function() {
+                 //   newLastName( $( "div#last_name" ) );
+                 // });
                </script>
             </div>
         </div>
