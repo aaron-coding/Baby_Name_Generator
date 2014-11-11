@@ -1,18 +1,25 @@
 var namesAry = ["Daenerys", "Joffrey", "Tyrion", "Jon", "Arya", "Gregor", "Sansa",        
 "Theon", "Cersei", "Jaime", "Drogo", "Eddard", "Margaery", "Robb", "Bran", "Tywin"]        
         
-var OrangeNames = ["Alex", "Tiffany", "George", "Piper", "Suzanne", "Dayanara",
-"Galina", "Lorna", "Nicky", "Poussey", "Tricia", "Carrie", "John", "Tasha",
+var OrangeNames = [["Alex", "Vause"], ["Tiffany", "Doggett"], ["George", "Mendez"],
+ "Piper", "Suzanne", "Dayanara", "Galina", "Lorna", "Nicky", "Poussey", "Tricia", 
+ "Carrie", "John", "Tasha",
 "Rosa", "Claudette"]
         
 function newName( j ) {        
   var randomNum = Math.floor(Math.random()*namesAry.length);        
   j.text( namesAry[randomNum] );        
 }       
-function newLastName( j ) {        
-  var randomNum = Math.floor(Math.random()*namesAry.length);        
-  j.text( namesAry[randomNum] );        
-}        
+// function newLastName( j ) {
+//   var randomNum = Math.floor(Math.random()*namesAry.length);
+//   j.text( namesAry[randomNum] );
+// }
+
+
+// function generateName ( boolFirst, boolLast ) {
+//   if (boolFirst && boolLast)
+//
+// };
         
 
 // Alex         Vause        
