@@ -11,7 +11,7 @@
     <script src="http://code.jquery.com/jquery-1.10.2.js"></script>
     <script src="./js/namesfrom.js"></script>
 
-    <title>Game of Thrones Names</title>
+    <title>Names from Game of Thrones, Orange is the New Black and more... </title>
 
     <!-- Bootstrap Core CSS -->
     <link href="css/bootstrap.min.css" rel="stylesheet">
@@ -82,19 +82,26 @@
 
         <div class="row">
             <div class="col-lg-12 text-center">
-                <h2>Names from Game of Thrones
-                </h2>
-                <p class="lead">Generate a first name</p>
-
-               <button id="main_name" class="btn btn-default">Make name</button>
-               <div id="first_name" class="name">Click here or on button to make name</div>
+                <h1>Names from Game of Thrones
+                </h1>
+                <!-- <p class="lead">Generate a first name</p> -->
+               <button id="game_of_thrones" class="btn btn-default">Make name</button>
+               <div id="games_first_name" class="name"></div>
+               <br><br><br><br><br>
+                <h1>Names from Orange is the New Black </h1>
+                <!-- <p class="lead">Generate a first name</p> -->
+               <button id="oitnb" class="btn btn-default">Make name</button>
+               <div id="oitnb_first_name" class="name"></div>
                <!-- <p class="lead">Generate a last name</p> -->
                <script>
-                 $( "button:first" ).click(function() {
-                   newName( $( "div#first_name" ) );
+                 $( "button#game_of_thrones" ).click(function() {
+                   newName( $( "div#games_first_name"), 1 );
+                 });  
+                 $( "button#oitnb" ).click(function() {
+                   newName( $( "div#oitnb_first_name"), 2 );
                  });  
                  $( "div#first_name" ).click(function() {
-                   newName( $( "div#first_name" ) );
+                   newName( $( "div#first_name", 1 ) );
                  });
                  // $( "div#last_name" ).click(function() {
                  //   newLastName( $( "div#last_name" ) );
