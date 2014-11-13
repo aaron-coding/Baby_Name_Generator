@@ -3,18 +3,21 @@ var orangeNames = [["Alex", "Vause"], ["Tiffany", "Doggett"], ["George", "Mendez
  , ["Nicky", "Nichols"], ["Poussey", "Washington"], ["Tricia", "Miller"], ["Carrie", "Black"], ["John", "Bennett"], 
  ["Tasha", "Jefferson"], ["Rosa", "Cisneros"], ["Claudette", "Pelage"]]
         
-function newName( j, num ) {        
-
-  console.log(num)   
+function newName( j, num, lname ) {        
+  
   if (num === 1) { 
     var randomNum = Math.floor(Math.random()*gameOfThronesNames.length); 
-    j.text( gameOfThronesNames[randomNum] );            
+    j.text( gameOfThronesNames[randomNum]);            
   } else {
     var randomNum = Math.floor(Math.random()*orangeNames.length); 
     j.text( orangeNames[randomNum][0] ); 
   }
-
-}       
+  
+  if (lname) {
+    j.append(" " + lname);
+  }
+}  
+     
 // function newLastName( j ) {
 //   var randomNum = Math.floor(Math.random()*namesAry.length);
 //   j.text( namesAry[randomNum] );

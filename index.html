@@ -11,26 +11,11 @@
     <script src="http://code.jquery.com/jquery-1.10.2.js"></script>
     <script src="./js/namesfrom.js"></script>
 
-    <title>Names from Game of Thrones, Orange is the New Black and more... </title>
+    <title>Baby Names from Game of Thrones, Orange is the New Black and more... </title>
 
     <!-- Bootstrap Core CSS -->
     <link href="css/bootstrap.min.css" rel="stylesheet">
-
-    <!-- Custom CSS -->
-    <style>
-    
-    h1, h2, h3, h4, h5, h6, p, div {
-      font-family: "atrament-web", sans-serif
-    }
-    
-    div.name {
-      font-size: 75px;
-    }
-    body {
-        padding-top: 70px;
-    }
-    </style>
-
+    <link href="css/names.css" rel="stylesheet">
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
     <!--[if lt IE 9]>
@@ -85,6 +70,11 @@
                 <h1>Names from Game of Thrones
                 </h1>
                 <!-- <p class="lead">Generate a first name</p> -->
+                <form id="lname_submission">
+                  <label for="form_last_name"></label>
+                  <input type="text" id="form_last_name" name="form_last_name">
+                  <input type="submit" value="Enter last name">
+                </form>
                <button id="game_of_thrones" class="btn btn-default">Make name</button>
                <div id="games_first_name" class="name"></div>
                <!-- <br><br><br><br><br>
@@ -92,15 +82,24 @@
                <button id="oitnb" class="btn btn-default">Make name</button>
                <div id="oitnb_first_name" class="name"></div> -->
                <script>
+                 var lname = ""
+                 
                  $( "button#game_of_thrones" ).click(function() {
-                   newName( $( "div#games_first_name"), 1 );
+                   newName( $( "div#games_first_name"), 1, lname);
                  });  
                  $( "button#oitnb" ).click(function() {
-                   newName( $( "div#oitnb_first_name"), 2 );
+                   newName( $( "div#oitnb_first_name"), 2, lname);
                  });  
                  $( "div#first_name" ).click(function() {
                    newName( $( "div#first_name", 1 ) );
                  });
+                 $( "#lname_submission" ).on("submit", function(event){
+                   event.preventDefault();
+                   var $input = $("#form_last_name");
+                   var lnameVal = $input.val();
+                   $input.val("");
+                   lname = lnameVal;
+                 }); 
                  // $( "div#last_name" ).click(function() {
                  //   newLastName( $( "div#last_name" ) );
                  // });
