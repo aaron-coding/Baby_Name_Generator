@@ -1,3 +1,4 @@
+
 var orangeNames = [["Alex", "Vause"], ["Tiffany", "Doggett"], ["George", "Mendez"],
  ["Piper", "Chapman"], ["Suzanne", "Warren"], ["Dayanara","Diaz"], ["Galina", "Reznikov"], ["Lorna", "Morello"]
  , ["Nicky", "Nichols"], ["Poussey", "Washington"], ["Tricia", "Miller"], ["Carrie", "Black"], ["John", "Bennett"], 
@@ -5,29 +6,22 @@ var orangeNames = [["Alex", "Vause"], ["Tiffany", "Doggett"], ["George", "Mendez
         
 function newName( j, num, lname ) {        
   
-  if (num === 1) { 
-    var randomNum = Math.floor(Math.random()*gameOfThronesNames.length); 
-    j.text( gameOfThronesNames[randomNum]);            
-  } else {
-    var randomNum = Math.floor(Math.random()*orangeNames.length); 
-    j.text( orangeNames[randomNum][0] ); 
-  }
+  if (num === 1) {
+    var aryToUse = gameOfThronesNames
+  } else if (num === 2){
+    var aryToUse = orangeNames        
+  }  
+  var randomNum = Math.floor(Math.random()*aryToUse.length); 
+  j.text( aryToUse[randomNum]);            
+  
   
   if (lname) {
     j.append(" " + lname);
   }
-}  
+};  
+
+
      
-// function newLastName( j ) {
-//   var randomNum = Math.floor(Math.random()*namesAry.length);
-//   j.text( namesAry[randomNum] );
-// }
-
-
-// function generateName ( boolFirst, boolLast ) {
-//   if (boolFirst && boolLast)
-//
-// };
 
 
 var gameOfThronesNames = ["Addam", 
