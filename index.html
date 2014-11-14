@@ -70,6 +70,15 @@
                 <h1>Names from Game of Thrones
                 </h1>
                 <!-- <p class="lead">Generate a first name</p> -->
+                <form id="theme_selector">
+                  <label for="current_theme"></label>
+                  <select name="current_theme" id="current_theme">
+                    <option value="1">Game of Thrones</option>
+                    <option value="2">Orange is the New Black</option>
+                  </select>
+                  <input type="submit" value="Set Theme">
+                </form>
+                
                 <form id="lname_submission">
                   <label for="form_last_name"></label>
                   <input type="text" id="form_last_name" name="form_last_name">
@@ -96,10 +105,14 @@
                  $( "#lname_submission" ).on("submit", function(event){
                    event.preventDefault();
                    var $input = $("#form_last_name");
-                   var lnameVal = $input.val();
-                   $input.val("");
-                   lname = lnameVal;
+                   lname = $input.val();
+                   // $input.val("");
+                    newName( $( "div#games_first_name"), 1, lname);
                  }); 
+                 $( "#theme_selector" ).on("submit", function(){
+                   
+                 });
+                 
                  // $( "div#last_name" ).click(function() {
                  //   newLastName( $( "div#last_name" ) );
                  // });
