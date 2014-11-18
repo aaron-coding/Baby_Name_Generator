@@ -84,39 +84,11 @@
                   <input type="text" id="form_last_name" name="form_last_name">
                   <input type="submit" value="Enter last name">
                 </form>
-               <button id="game_of_thrones" class="btn btn-default">Make name</button>
-               <div id="games_first_name" class="name"></div>
-               <!-- <br><br><br><br><br>
-                <h1>Names from Orange is the New Black </h1>
-               <button id="oitnb" class="btn btn-default">Make name</button>
-               <div id="oitnb_first_name" class="name"></div> -->
-               <script>
-                 var lname = ""
-                 
-                 $( "button#game_of_thrones" ).click(function() {
-                   newName( $( "div#games_first_name"), 1, lname);
-                 });  
-                 $( "button#oitnb" ).click(function() {
-                   newName( $( "div#oitnb_first_name"), 2, lname);
-                 });  
-                 $( "div#first_name" ).click(function() {
-                   newName( $( "div#first_name", 1 ) );
-                 });
-                 $( "#lname_submission" ).on("submit", function(event){
-                   event.preventDefault();
-                   var $input = $("#form_last_name");
-                   lname = $input.val();
-                   // $input.val("");
-                    newName( $( "div#games_first_name"), 1, lname);
-                 }); 
-                 $( "#theme_selector" ).on("submit", function(){
-                   
-                 });
-                 
-                 // $( "div#last_name" ).click(function() {
-                 //   newLastName( $( "div#last_name" ) );
-                 // });
-               </script>
+               <button id="next_name" class="btn btn-default">Next name</button>
+               <div id="display_name_box" class="name"></div>
+
+<!--               <script>
+               </script> -->
             </div>
         </div>
         <!-- /.row -->
