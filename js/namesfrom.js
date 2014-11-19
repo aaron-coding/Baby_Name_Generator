@@ -2,13 +2,17 @@ $(function (){var Names = window.Names = window.Names || {}
 
 Names = function Names(el){
   this.$el = $(el)
-  this.themeNum = 1; //game of thrones default.
+  this.themeId = 1; //game of thrones default.
   this.lname = "";
   this.bindEvents();
 }
 
 Names.prototype.bindEvents = function(){
   $( "button#next_name" ).click(function() {
+    event.preventDefault();
+    var $input = $("#form_last_name");
+    lname = $input.val();
+    namesInst.setLname(lname);
     namesInst.newName();
   });  
 
@@ -19,12 +23,18 @@ Names.prototype.bindEvents = function(){
     namesInst.setLname(lname);
     namesInst.newName();
   }); 
+  
+  $( "#theme_selector" ).on("submit", function(event) {
+    event.preventDefault();
+    var $selected = $("#theme_selector option:selected");
+    this.setTheme($selected.data("theme-id"));
+  }.bind(this));
 }
 
 Names.prototype.newName = function() {        
-  if (this.themeNum === 1) {
+  if (this.themeId === 1) {
     var aryToUse = gameOfThronesNames
-  } else if (this.themeNum === 2){
+  } else if (this.themeId === 2){
     var aryToUse = orangeNames        
   }  
   var randomNum = Math.floor(Math.random()*aryToUse.length); 
@@ -37,7 +47,12 @@ Names.prototype.newName = function() {
 
 Names.prototype.setLname = function(lname) {
   this.lname = lname;
-}
+};
+
+Names.prototype.setTheme = function(themeId) {
+  this.themeId = themeId;
+};
+
 var displayNameBox = document.getElementById('display_name_box');
 var namesInst = new Names(displayNameBox);
 
@@ -46,15 +61,30 @@ var namesInst = new Names(displayNameBox);
 // });
 
   
+var orangeNames = ["Alex",
+"Tiffany",
+"George",
+"Piper",
+"Suzanne",
+"Dayanara",
+"Galina",
+"Lorna",
+"Nicky",
+"Poussey",
+"Tricia",
+"Carrie",
+"John",
+"Tasha",
+"Rosa",
+"Claudette"]
 
 
 
 
-
-var orangeNames = [["Alex", "Vause"], ["Tiffany", "Doggett"], ["George", "Mendez"],
- ["Piper", "Chapman"], ["Suzanne", "Warren"], ["Dayanara","Diaz"], ["Galina", "Reznikov"], ["Lorna", "Morello"]
- , ["Nicky", "Nichols"], ["Poussey", "Washington"], ["Tricia", "Miller"], ["Carrie", "Black"], ["John", "Bennett"], 
- ["Tasha", "Jefferson"], ["Rosa", "Cisneros"], ["Claudette", "Pelage"]]
+// var orangeNamesPlusLast = [["Alex", "Vause"], ["Tiffany", "Doggett"], ["George", "Mendez"],
+//  ["Piper", "Chapman"], ["Suzanne", "Warren"], ["Dayanara","Diaz"], ["Galina", "Reznikov"], ["Lorna", "Morello"]
+//  , ["Nicky", "Nichols"], ["Poussey", "Washington"], ["Tricia", "Miller"], ["Carrie", "Black"], ["John", "Bennett"],
+//  ["Tasha", "Jefferson"], ["Rosa", "Cisneros"], ["Claudette", "Pelage"]]
         
 
 
