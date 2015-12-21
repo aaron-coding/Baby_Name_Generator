@@ -2,4 +2,4 @@
 
 
 ## Getting Started
-You can navigate to [www.namesfrom.com](http://www.namesfrom.com) and check out the site. It's a Jquery-based random name generator. The first theme for name generation is Game of Thrones.
+You can view this project on [here](https://cdn.rawgit.com/aaron-coding/Baby_Name_Generator/master/index.html) courtesy of rawgit.com. The project is a Jquery-based random name generator. The first theme for name generation is Game of Thrones.
